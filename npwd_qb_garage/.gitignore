@@ -1,0 +1,6 @@
+yarn-error.log
+node_modules
+dist
+web
+release
+.vscode/settings.json

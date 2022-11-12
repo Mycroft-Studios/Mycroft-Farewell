@@ -1,0 +1,65 @@
+[
+  {
+    "Bagging": {
+      "Position": {
+        "x": 1092.1,
+        "y": -3196,
+        "z": -37.5
+      },
+      "Delay": 1000,
+      "Active": false
+    },
+    "Packaging": {
+      "Position": {
+        "x": 1089.3,
+        "y": -3196.1,
+        "z": -37.5
+      },
+      "Delay": 1000,
+      "Active": false
+    },
+    "Color": 6,
+    "Sprite": 378,
+    "Blip": true,
+    "Positions": {
+      "Exit": {
+        "x": 1088.6,
+        "y": -3187.8,
+        "z": -39
+      },
+      "PowerGen": {
+        "x": 1100.9,
+        "y": -3192.5,
+        "z": -39
+      },
+      "Entrance": {
+        "x": 2249.3,
+        "y": 5575.3,
+        "z": 53.2
+      },
+      "Storage": {
+        "x": 1096.7,
+        "y": -3192.9,
+        "z": -39,
+        "Weight": 250.0,
+        "Slots": 100
+      }
+    },
+    "IPL": "bkr_biker_interior_placement_interior_4_biker_dlc_int_ware03_milo",
+    "PowerStatus": false,
+    "name": "WareHouse 1",
+    "Owner": "",
+    "PowerLevel": 100,
+    "Price": 100,
+    "Processing": {
+      "Position": {
+        "x": 1095,
+        "y": -3196.5,
+        "z": -37.0
+      },
+      "BucketNumber": 10,
+      "Delay": 60000,
+      "Active": false
+    }
+  }
+]

@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+.messages-app {
+    display: none;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.messages-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 9vh;
+}
+.messages-header-top {
+    position: relative;
+    height: 4.5vh;
+    width: 100%;
+    background-color: #101d25;
+}
+.messages-header-footer {
+    position: relative;
+    height: 4.5vh;
+    width: 100%;
+    background-color: #1f2c34;
+}
+.messages-header-footer > p {
+    padding-top: 1.3vh;
+    padding-left: 2vh;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5vh;
+}
+#messages-search-chats {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1.6vh;
+    color: white;
+    right: 1vh;
+    transition: .1s;
+    font-size: 1.5vh;
+}
+#messages-search-chats:hover {
+    color: rgb(182, 182, 182);
+}
+#messages-search-input {
+    display: none;
+    position: absolute;
+    background: none;
+    border: none;
+    background: rgb(226, 226, 226);
+    top: .7vh;
+    width: 17vh;
+    margin: 0 auto;
+    height: 2.5vh;
+    border-radius: 1vh;
+    box-shadow: 0 0 .2vh 0 rgba(0, 0, 0, 0.281);
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    text-indent: 1vh;
+    z-index: 100;
+
+    right: 5vh;
+    top: 0.95vh;
+    width: 12vh;
+}
+
+.messages-chats {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 9vh;
+    background: #101d25;
+    overflow-y: scroll;
+    overflow-x: hidden !important;
+}
+
+.messages-chats::-webkit-scrollbar {
+    position: absolute;
+    width: .6vh;
+}
+
+.messages-chats::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.messages-chats::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.664);
+    border-radius: 1vh 0 0 1vh;
+}
+
+.messages-chat-unreadmessages {
+    display: none;
+    position: absolute;
+    right: 1vh;
+    top: 3.1vh;
+    width: 1.8vh;
+    height: 1.8vh;
+    background-color: #00b09c;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1vh;
+    line-height: 1.9vh;
+}
+
+.messages-chat {
+    position: relative;
+    width: 100%;
+    height: 7vh;
+    color: white;
+    border-bottom: 0.1vh solid #1f2c34;
+    background: #101d25;
+    transition: all 0.15s ease 0s;
+}
+.messages-chat:hover {
+    background: #00b09c;
+}
+.messages-chat-picture {
+    position: absolute;
+    height: 5vh;
+    width: 5vh;
+    border-radius: 50%;
+    top: 1vh;
+    left: 1vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.messages-openedchat-picture {
+    position: absolute;
+    height: 3.5vh;
+    width: 3.5vh;
+    background: gray;
+    border-radius: 50%;
+    top: .5vh;
+    left: 3.5vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.messages-chat-name {
+    position: absolute;
+    top: 1.35vh;
+    left: 7vh;
+    color: white;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5vh;
+    letter-spacing: 1px;
+}
+.messages-chat-lastmessage {
+    position: absolute;
+    bottom: .6vh;
+    left: 7vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1vh;
+    color: white;
+    max-width: 17vh;
+}
+.messages-chat-lastmessage > p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.messages-chat-lastmessagetime {
+    position: absolute;
+    top: 1.35vh;
+    right: 1vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1vh;
+    color: white;
+}
+
+.messages-openedchat {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: -30vh;
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/apps/whatsapp-chat.png');
+    background-repeat: no-repeat;
+    background-size: inherit;
+}
+
+#messages-openedchat-back {
+    position: absolute;
+    line-height: 5.5vh;
+    top: -.4vh;
+    left: 1.4vh;
+    color: white;
+    transition: .1s;
+}
+#messages-openedchat-back:hover {
+    color: rgb(197, 197, 197);
+}
+.messages-openedchat-name {
+    position: absolute;
+    line-height: 5.5vh;
+    top: -.4vh;
+    left: 8vh;
+    color: white;
+    font-size: 1.5vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5vh;
+}
+.messages-header-openedchat{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 9vh;
+    background-color: rgba(7, 94, 84, 0);
+}
+.messages-header-top-openedchat {
+    position: relative;
+    height: 4.5vh;
+    width: 100%;
+    background-color: #101d25;
+}
+.messages-header-footer-openedchat {
+    position: relative;
+    height: 4.5vh;
+    width: 100%;
+    background-color: #1f2c34;
+}
+.messages-header-footer-openedchat > p {
+    padding-top: 1.3vh;
+    padding-left: 2vh;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5vh;
+}
+
+.messages-extra-buttons {
+    display: none;
+    position: absolute;
+    left: -10vh;
+}
+.messages-openedchat-input {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    height: 10vh;
+}
+.messages-extra-button {
+    background: none;
+    border: none;
+    background: #00b09c;
+    color: white;
+    width: 3.5vh;
+    height: 3.5vh;
+    border-radius: 1vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4vh;
+    z-index: 100;
+    top: 1.3vh;
+    left: .8vh;
+    float: left;
+    margin-right: 1vh;
+    position: relative;
+    text-align: center;
+    transition: .1s linear;
+}
+.messages-extra-button:hover {
+    background: #054640;
+}
+.messages-extra-button > i {
+    line-height: 3.5vh;
+    font-size: 1.5vh;
+}
+#messages-openedchat-message {
+    position: absolute;
+    border: none;
+    background: #2d383e;
+    margin: 0px auto;
+    height: 3.5vh;
+    border-radius: 3vh;
+    font-family: Poppins, sans-serif;
+    font-size: 1.4vh;
+    outline: none;
+    text-indent: 3vh;
+    z-index: 100;
+    top: 5.75vh;
+    left: 0.8vh;
+    width: 23vh;
+    color: white;
+}
+#messages-openedchat-send {
+    position: absolute;
+    top: 5.75vh;
+    right: 1.1vh;
+    color: white;
+    text-align: center;
+    line-height: 3.5vh;
+    background: #00b09c;
+    font-size: 1.5vh;
+    width: 3.5vh;
+    height: 3.5vh;
+    border-radius: 1vh;
+    text-indent: -0.4vh;
+    transition: all 0.15s ease 0s;
+}
+#messages-openedchat-send:hover {
+    background: #054640;
+}
+#messages-openedchat-message-extras {
+    position: absolute;
+    left: 1.2vh;
+    z-index: 100;
+    top: 6.3vh;
+    font-size: 1.5vh;
+    width: 2.6vh;
+    height: 2.6vh;
+    text-align: center;
+    line-height: 2.5vh;
+    border-radius: 50% 0% 0px 50%;
+    color: white;
+    transition: all 0.2s ease 0s;
+}
+#messages-openedchat-message-extras:hover {
+    color: #054640;
+}
+
+.messages-openedchat-messages {
+    position: absolute;
+    height: 70%;
+    width: 99%;
+    top: 10vh;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+}
+
+.messages-openedchat-messages::-webkit-scrollbar {
+    position: absolute;
+    width: .3vh;
+}
+.messages-openedchat-messages::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+}
+.messages-openedchat-messages::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.664);
+    border-radius: 1vh 0 0 1vh;
+}
+
+.messages-openedchat-message{
+    position: relative;
+    width: fit-content;
+    max-width: 80%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    height: auto;
+    margin-top: .7vh;
+    padding: .4vh;
+    text-indent: .3vh;
+    transition: .1s linear;
+}
+.messages-shared-location:hover {
+    opacity: .8;
+    transition: .1s linear;
+}
+.messages-openedchat-message-me {
+    background: #054640;
+    color: white;
+    border-radius: 10px;
+    float: right;
+    right: 10px;
+}
+
+.messages-openedchat-message-other {
+    background: #222F37;
+    color: white;
+    border-radius: 10px;
+    float: left;
+    left: 15px;
+}
+.messages-openedchat-message-time {
+    font-size: 1.1vh;
+    text-align: right;
+    padding-left: 3.7vh;
+    margin-top: -0.25vh;
+    font-family: 'Poppins', sans-serif;
+    color: #9EA3A7;
+}
+.unique-chat {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1vh;
+    top: 0;
+}
+.messages-openedchat-date {
+    position: sticky;
+    top: 0.2vh;
+    z-index: 2;
+    margin: 0.2vh auto 0.7vh;
+    text-align: center;
+    background: #1f2a30;
+    width: fit-content;
+    padding: 0.4vh;
+    height: 2vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1vh;
+    border-radius: 0.4vh;
+    text-transform: uppercase;
+    color: white;
+}
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix {
+    display: inline-block;
+}
+.clearfix {
+    display: block;
+}
+
+#popup {
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.popupclass {
+    margin:0px auto;
+    margin-top:120px;
+    position:relative;
+    padding:10px;
+    width:820px;
+    min-height:250px;
+    border-radius:4px;
+    box-shadow: 0 2px 5px #666666;
+}
+
+.emojionearea.emojionearea-inline {
+    height: 34px;
+    width: 68%;
+    top: 65px;
+    left: 40px;
+    background-color: #2d383e;
+}
+
+.emojionearea.emojionearea-inline>.emojionearea-editor {
+    height: 32px;
+    min-height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    top: 0;
+    left: 12px;
+    right: 24px;
+    color: white;
+    padding: 6px 0;
+}
+
+.emojionearea .emojionearea-button.active + .emojionearea-picker-position-top {
+    margin-top: -269px;
+    left: -40px;
+}
+
+.emojionearea.focused {
+    border-color: #245247;
+}

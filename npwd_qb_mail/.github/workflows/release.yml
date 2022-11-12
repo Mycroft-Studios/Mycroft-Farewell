@@ -1,0 +1,55 @@
+name: Build & Release
+
+on:
+  push:
+    tags:
+      - "*"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Get tag
+      run: echo ::set-output name=VERSION_TAG::${GITHUB_REF/refs\/tags\//}
+      id: get_tag
+      
+    - name: Checkout source code
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+        ref: ${{ github.ref }}   
+        
+    - name: Setup node
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16.x
+        cache: 'yarn'      
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies & Build
+      run: yarn --frozen-lockfile && yarn build
+    
+    - name: Bundle
+      run: |
+        mkdir -p ./temp/npwd_qb_mail
+        cp ./{README.md,fxmanifest.lua} ./temp/npwd_qb_mail
+        cp -r ./client ./temp/npwd_qb_mail
+        cp -r ./server ./temp/npwd_qb_mail
+        cp -r ./web ./temp/npwd_qb_mail
+        cd ./temp && zip -r ../npwd_qb_mail.zip ./npwd_qb_mail
+    - name: Create Release
+      uses: "marvinpinto/action-automatic-releases@v1.2.1"
+      id: auto_release
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        title: NPWD QB Mail App | ${{ steps.get_tag.outputs.VERSION_TAG }}
+        prerelease: false
+        files: npwd_qb_mail.zip
+
+      env:
+        CI: false
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

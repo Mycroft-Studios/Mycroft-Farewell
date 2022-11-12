@@ -1,0 +1,80 @@
+<html>
+<body>
+<iframe id = "picture"  FRAMEBORDER="no" BORDER="0" SCROLLING="no" overflow = "hidden" width = "1920px" height = "1080px" class="picture" src="" visibility = "hidden"></iframe>
+</body>
+</html>
+<style>
+
+body {
+  overflow: hidden; /* Hide scrollbars */
+}
+
+.picture
+{
+    width: 1920px;
+    height: 1080px;
+    margin-left: 30%;
+    -ms-transform: scale(0.25);
+    -moz-transform: scale(0.25);
+    -o-transform: scale(0.25);
+    -webkit-transform: scale(0.25);
+    transform: scale(0.25);
+
+    -ms-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 1px;
+  opacity: 0;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0);
+  width: 1px;
+  opacity: 0;
+  background-color: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0);
+  width: 1px;
+  opacity: 0;
+  background-color: transparent;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0);
+  width: 1px;
+  opacity: 0;
+  background-color: transparent;
+}
+</style>
+<script>
+  var x = document.getElementById("picture");
+  x.style.visibility = "hidden";
+  window.addEventListener('message', function(e) {
+    if (e.data.action == 'show:pic') {
+      var x = document.getElementById("picture");
+      x.style.visibility = "visible";
+      x.setAttribute("src", e.data.picture);
+      /* x.src = e.data.picture; */
+    } else if (e.data.action == 'hide:pic') {
+      var x = document.getElementById("picture");
+      x.style.visibility = "hidden";
+    }
+  })
+</script>

@@ -1,0 +1,5 @@
+RegisterNetEvent("szi_camera:TakePhoto", function(url)
+    print("server:".. url)
+    local xPlayer = ESX.GetPlayerFromId(source)
+    xPlayer.addInventoryItem('photo', 1, {photo = url, description = "Average Photo"})
+end)
