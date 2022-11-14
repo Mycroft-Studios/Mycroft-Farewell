@@ -4,8 +4,8 @@ Config.BillingCommissions = { -- This is a percentage (0.10) == 10%
 }
 
 
-Config.TwitterLog = "https://discord.com/api/webhooks/975080849571709018/RA3L4uTZI5fNJm_s8bbaJyOSvFYh0hrs8FhbbqKRDPNRVuPH0t0A5acTzxFcrMvfOYqg"
-Config.AdsLog = "https://discord.com/api/webhooks/983835517319802931/M-_c0nltVlUwW45rDW1SXH3RDCeoukJXTMzoZE30LE5NbracMWOJkgx_C7AvdYpv23EY"
+Config.TwitterLog = ""
+Config.AdsLog = ""
 Config.Linux = false -- True if linux
 Config.TweetDuration = 12 -- How many hours to load tweets (12 will load the past 12 hours of tweets)
 Config.RepeatTimeout = 2000
